@@ -22,4 +22,4 @@ jobs:
     steps:
       - name: goodbye world
         run: echo "Goodbye world"
-        shell: bashSecond code commit
+        shell: bash
