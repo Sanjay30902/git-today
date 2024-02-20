@@ -12,7 +12,7 @@ jobs:
       - name: Create comment
         uses: peter-evans/create-or-update-comment@v4
         with:
-          issue-number: ${{ github.event.issue.number }}
+          issue-number: 1
           body: |
             This is a multi-line test comment
             - With GitHub **Markdown** :sparkles:
@@ -20,5 +20,18 @@ jobs:
 
             [1]: https://github.com/peter-evans/create-or-update-comment
           reactions: '+1'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Update comment
+        uses: peter-evans/create-or-update-comment@v4
+        with:
+          comment-id: 557858210
+          body: |
+            **Edit:** Some additional info
+          reactions: eyes
+      - name: Add reactions
+        uses: peter-evans/create-or-update-comment@v4
+        with:
+          comment-id: 557858210
+          reactions: |
+            heart
+            hooray
+            laugh
