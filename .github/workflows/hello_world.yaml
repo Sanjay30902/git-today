@@ -23,6 +23,6 @@ jobs:
       - name: goodbye world
         if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == 'true'
         run: echo "Goodbye world"
-      #   shell: bash
-      # - name: hello world
-      #   run: echo "Hello world 2"
+      - name: hello world
+        run: echo "Hello world 2"
+
