@@ -6,7 +6,7 @@ on:
       - main
   pull_request:
     branches:
-      - main
+      - sanjay/new
   workflow_dispatch:
 
 jobs:
@@ -24,3 +24,6 @@ jobs:
         if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true
         run: echo "Goodbye world"
         shell: bash
+      - name: hello world
+        run: echo "Hello world 2"
+
