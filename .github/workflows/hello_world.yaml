@@ -2,7 +2,7 @@ name : Hello world workflow
 on:
   push:
     branches:
-      - main
+      - sanjay/new
   pull_request:
     types: [opened, closed]
     branches:
@@ -25,11 +25,10 @@ jobs:
         run: echo "v=${{ github.event.head_commit.id }}" >> "${GITHUB_OUTPUT}"
       - name: hello world
         run: |
-          s="${{steps.empt.outputs.v}}"
-          if[[ -z s ]]; then
-            echo "no val"
-          else
+          if [[ ${{steps.empt.outputs.v}} != '' ]]; then
             echo "val"
+          else
+            echo "No val"
           fi
         
 
