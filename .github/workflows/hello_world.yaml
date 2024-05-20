@@ -24,8 +24,11 @@ jobs:
         id: empt
         run: echo "v=${{ github.event.head_commit.id }}" >> "${GITHUB_OUTPUT}"
       - name: hello world
-        if: contains(github.event.head_commit.id," ")
         run: |
-          echo "No id"
+          if [[ ${{steps.empt.outputs.v}} != '' ]]; then
+            echo "val"
+          else
+            echo "No val"
+          fi
         
 
