@@ -22,9 +22,9 @@ jobs:
     runs-on : ubuntu-latest
     steps:
       - name: goodbye world
-        if: github.event_name == 'pull_request'
+        if: github.event_name == 'pull_request' 
         run: echo "${{ github.event.pull_request.head.sha }}"
       - name: hello world
-        run: echo "Hello world 2"
+        run: echo "Hello world 324"
         
 
