@@ -22,8 +22,8 @@ jobs:
     runs-on : ubuntu-latest
     steps:
       - name: goodbye world
-        run: echo "${{ github.event.head_commit.id }}"
+        id: emp
+        run: echo "v=${{ github.event.head_commit.id }}" >> "${GITHUB_OUTPUT}"
       - name: hello world
+        if: ${{steps.emp.outputs.v}} == ''
         run: echo "Hello world 324"
-        
-
