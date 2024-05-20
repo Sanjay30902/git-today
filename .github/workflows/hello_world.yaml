@@ -22,7 +22,7 @@ jobs:
     runs-on : ubuntu-latest
     steps:
       - name: goodbye world
-        if: github.event_name == 'pull_request' && github.event.pull_request.merged == 'true' 
+        if: ${{ github.event_name == 'pull_request' && github.event.pull_request.merged == 'true' }}
         run: echo "${{ github.event.pull_request.head.sha }}"
       - name: hello world
         run: echo "Hello world 324"
