@@ -32,7 +32,7 @@ jobs:
             echo "val"
           fi
   if_merged:
-    if: github.event.pull_request.merged == true
+    if: startsWith(github.event.head_commit.message,'Merge pull request')
     runs-on: ubuntu-latest
     steps:
     - run: |
