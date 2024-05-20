@@ -26,11 +26,6 @@ jobs:
       - name: hello world
         if: contains(github.event.head_commit.id,'')
         run: |
-          s=${{steps.empt.outputs.v}}
-          if[[ s != '' ]]; then
-            echo "val"
-          else
-            echo "No val"
-          fi
+          echo "No id"
         
 
