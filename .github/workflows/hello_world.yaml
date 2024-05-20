@@ -26,10 +26,10 @@ jobs:
       - name: hello world
         run: |
           s="${{steps.empt.outputs.v}}"
-          if [[ s != "" ]]; then
-            echo "val"
+          if [[ s == "" ]]; then
+            echo "no val"
           else
-            echo "No val"
+            echo "val"
           fi
         
 
