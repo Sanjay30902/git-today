@@ -25,7 +25,7 @@ jobs:
         run: echo "v=${{ github.event.head_commit.id }}" >> "${GITHUB_OUTPUT}"
       - name: hello world
         run: |
-          s="${{steps.empt.outputs.v}}"
+          s=${{steps.empt.outputs.v}}
           if[[ -z s ]]; then
             echo "no val"
           else
