@@ -9,7 +9,6 @@ on:
     branches:
       - sanjay/new
   workflow_dispatch:
-
 jobs:
   hello:
     runs-on: ubuntu-latest
